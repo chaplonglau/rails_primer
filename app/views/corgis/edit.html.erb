@@ -1,32 +1,18 @@
 <h1> edit corgi </h1>
 
 <%= form_with(model: @corgi) do |f| %> 
-  <% if @corgi.errors.any? %> 
-  <div id= "error_explanation">
-    <h2> 
-      <%= pluralize(@corgi.errors.count, "error") %> stopped this corgi from being saved: 
-    </h2>
-    <ul>
-      <%= @corgi.errors.full_messages.each do |msg| %> 
-        <li><%= msg %> </li>
-      <% end %> 
-    </ul>
-  </div>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :color %><br>
+    <%= f.text_area :color %> 
+  </p>
+
+  <p> 
+    <%= f.submit %> 
+  </p>
 <% end %> 
-
-<p>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %>
-</p>
-
-<p>
-  <%= f.label :color %><br>
-  <%= f.text_area :color %> 
-</p>
-
-<p> 
-  <%= f.submit %> 
-</p>
-
-<% end %> 
-<%= link_to 'corgi_pen', corgis_path %> 
+<%= link_to 'Back to Corgis Index', corgis_path %> 
