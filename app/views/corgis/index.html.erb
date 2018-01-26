@@ -1,0 +1,12 @@
+<h1> All Corgis </h1>
+<% @corgis.each do |corgi| %> 
+  <h2><%=corgi.name %></h2>
+  <h2><%=corgi.color %></h2>
+  <h2><%= link_to 'show', corgi_path(corgi) %> </h2>
+  <h2><%= link_to 'edit', edit_corgi_path(corgi) %> </h2>
+  <h2><%= link_to 'delete', corgi_path(corgi), method: :delete, data: { confirm: 'are you sure? '}%> </h2>
+  <br>
+<% end %> 
+
+<%= link_to 'make a new corgi', new_corgi_path %> 
+<%= link_to 'home page', root_path %> 

@@ -1,0 +1,19 @@
+<h1> make a new corgi </h1>
+
+<%= form_with scope: :corgi, url: corgis_path, local: true do |f| %> 
+  <p>
+    <%= f.label :name %> <br>
+    <%= f.text_field :name %> 
+  </p>
+
+  <p>
+    <%= f.label :color %> <br>
+    <%= f.text_field :color %> 
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back to Corgis Index', corgis_path %> 
